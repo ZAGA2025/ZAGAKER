@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - ZAGA</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+</head>
+
+<body>
+
+    <section class="welcome" style="text-align:center;">
+        <h2>Connexion Google</h2>
+        <p>Veuillez vous connecter avec votre compte Gmail.</p>
+
+        <button id="googleLogin" style="padding:12px 20px;font-size:18px;">
+            Se connecter avec Google
+        </button>
+    </section>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+
+        // 🔥 CONFIG FIREBASE (à remplacer)
+        const firebaseConfig = {
+            apiKey: "TON_API_KEY",
+            authDomain: "TON_PROJET.firebaseapp.com",
+            projectId: "TON_PROJET",
+            storageBucket: "TON_PROJET.appspot.com",
+            messagingSenderId: "ID",
+            appId: "APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        document.getElementById("googleLogin").onclick = () => {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    window.location.href = "services.html";
+                })
+                .catch((error) => {
+                    alert("Erreur de connexion : " + error.message);
+                });
+        };
+    </script>
+
+</body>
+</html>
