@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ZAGA</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html">ACCUEIL</a>
+        <a href="about.html">À PROPOS</a>
+        <a href="services.html" class="active">SERVICES</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <section class="welcome">
+        <div class="text">
+            <h2>NOS SERVICES</h2>
+            <p>Bienvenue dans l’espace Services.  
+               Cette page est disponible uniquement pour les utilisateurs connectés avec leur compte Google.
+            </p>
+
+            <h3>Services disponibles :</h3>
+            <ul>
+                <li>Installation réseau LAN / WAN</li>
+                <li>Configuration routeurs & switches</li>
+                <li>Déploiement Wi-Fi professionnel</li>
+                <li>Cybersécurité & protection des données</li>
+                <li>Maintenance informatique</li>
+                <li>Solutions Cloud & VPN</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 ZAGA — Tous droits réservés.
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+
+        // 🔥 CONFIG FIREBASE (à remplacer par ton propre config)
+        const firebaseConfig = {
+            apiKey: "TON_API_KEY",
+            authDomain: "TON_PROJET.firebaseapp.com",
+            projectId: "TON_PROJET",
+            storageBucket: "TON_PROJET.appspot.com",
+            messagingSenderId: "ID",
+            appId: "APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // 🔒 Vérifie si la personne est connectée
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                alert("Vous devez être connecté via Google pour accéder aux services.");
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</body>
+</html>
