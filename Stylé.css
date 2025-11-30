@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef5f8;
+}
+
+/* HEADER HAUT */
+.top-header {
+    width: 100%;
+    padding: 15px 40px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #d9e6eb;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0080c8;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f1f5f7;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+}
+
+.icons a {
+    margin-left: 20px;
+    color: #222;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* MENU PRINCIPAL */
+.main-nav {
+    background: #003c71;
+    padding: 12px 40px;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav .active {
+    border-bottom: 3px solid #00c4cc;
+}
+
+/* SECOND MENU */
+.sub-nav {
+    background: #2b9fb3;
+    padding: 10px 40px;
+    display: flex;
+    gap: 30px;
+}
+
+.sub-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sub-nav .active {
+    border-bottom: 3px solid white;
+}
+
+/* SECTION BIENVENUE */
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background: white;
+}
+
+.welcome .text {
+    width: 50%;
+}
+
+.welcome .image img {
+    width: 420px;
+    border-radius: 5px;
+}
+
+/* VAGUES */
+.waves img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #002647;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE POUR TELEPHONE */
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .welcome {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome .text, .welcome .image {
+        width: 100%;
+    }
+
+    .welcome .image img {
+        width: 100%;
+    }
+
+    .main-nav, .sub-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
