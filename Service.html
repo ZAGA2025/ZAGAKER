@@ -70,3 +70,24 @@
     </script>
 </body>
 </html>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAfgnWks0vNaxQAcC97U8PraI_3TP9FNZQ",
+  authDomain: "zaga-auth.firebaseapp.com",
+  projectId: "zaga-auth",
+  storageBucket: "zaga-auth.firebasestorage.app",
+  messagingSenderId: "140419965106",
+  appId: "1:140419965106:web:0d7fa41971b2e6665a69ab",
+  measurementId: "G-TV9NLC321F"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
